@@ -7,7 +7,6 @@ const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]
 });
 
-
 const openai = new OpenAI({ apiKey: config.openaiApiKey });
 const systemPrompt = {
   role: "system",
