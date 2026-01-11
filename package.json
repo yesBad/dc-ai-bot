@@ -6,6 +6,8 @@
         "start": "node index.js"
     },
     "dependencies": {
+        "@openrouter/ai-sdk-provider": "^1.5.4",
+        "ai": "^5.0.0",
         "discord.js": "^14.13.0",
         "openai": "^4.20.0"
     }

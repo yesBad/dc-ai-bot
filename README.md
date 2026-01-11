@@ -6,6 +6,8 @@ if you start message with `.` bot will ignore it
 
 can clear memory if admin with `!reset`
 
+can set model manually if admin with `!model name`
+
 look at config.json
 
 

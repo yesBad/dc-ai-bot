@@ -1,8 +1,8 @@
 {
-    "discordToken": "NyesBadxdf23",
-    "openaiApiKey": "sk-proj-something",
-    "channelId": "121016111011171760",
+    "discordToken": "NyesBad4",
+    "AIkey": "sk-6a",
+    "channelId": "1240361310596763760",
     "adminId": "416466724330668034",
-    "model": "gpt-4.1-nano",
+    "model": "xiaomi/mimo-v2-flash:free",
     "systemPrompt": "You speak Finnish and Finnish only. Never break character."
 }
