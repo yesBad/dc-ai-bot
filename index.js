@@ -8,11 +8,6 @@ const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent]
 });
 
-const systemPrompt = {
-  role: "system",
-  content: config.systemPrompt
-};
-
 const openrouter = createOpenRouter({ apiKey: config.AIkey });
 let model = openrouter(config.model);
 
@@ -112,7 +107,7 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', async (message) => {
-  if (message.author.bot) return;
+  if (message.author.bot && !== config.allowedBot) return;
   if (message.channel.id !== config.channelId) return;
   if (message.content.startsWith(".")) return;
 
@@ -134,17 +129,17 @@ client.on('messageCreate', async (message) => {
     await message.channel.sendTyping();
 
     memory.push({ role: "user", content: `${message.content}` });
-    if (memory.length > 100) memory.shift();
+    if (memory.length > 15) memory.shift();
 
     try {
       let now = performance.now();
       const response = await generateText({
         model,
-        messages: [systemPrompt, ...memory],
+        messages: [...memory],
         providerOptions: {
           openrouter: {
             reasoning: {
-              max_tokens: 10,
+              max_tokens: 2048,
             },
           },
         },
