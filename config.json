@@ -3,6 +3,6 @@
     "AIkey": "sk-6a",
     "channelId": "1240361310596763760",
     "adminId": "416466724330668034",
-    "model": "xiaomi/mimo-v2-flash:free",
-    "systemPrompt": "You speak Finnish and Finnish only. Never break character."
+    "allowedBot": "644766603078139935",
+    "model": "@preset/bot"
 }
