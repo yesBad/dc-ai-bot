@@ -107,7 +107,7 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', async (message) => {
-  if (message.author.bot && !== config.allowedBot) return;
+  if (message.author.bot && message.author.id !== config.allowedBot) return;
   if (message.channel.id !== config.channelId) return;
   if (message.content.startsWith(".")) return;
 
